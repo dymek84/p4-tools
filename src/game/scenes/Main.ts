@@ -1,6 +1,7 @@
 import Phaser from 'phaser';
 import { BlackHolePass } from '../../fx/custom/BlackHolePass';
 import { FXManager } from '../../fx/FXManager';
+import { ShockwavePass } from '../../fx/passes/ShockwavePass';
 import { PixiFilterPipeline } from '../../fx/pixi/PixiFilterPipeline';
 import { ReglPipeline } from '../../fx/regl/ReglPipeline';
 import { ThreePipeline } from '../../fx/three/ThreePipeline';
@@ -9,6 +10,7 @@ import { FXMenu } from '../../ui/FXMenu';
 export class Main extends Phaser.Scene {
     private fx!: FXManager;
     private menu!: FXMenu;
+    private shockwave!: ShockwavePass;
 
     constructor() {
         super('Main');
@@ -31,9 +33,15 @@ export class Main extends Phaser.Scene {
         this.fx.addPass(new PixiFilterPipeline(this));
         this.fx.addPass(new ReglPipeline(this));
         this.fx.addPass(new ThreePipeline(this));
+        this.shockwave = new ShockwavePass(this);
+        this.fx.addPass(this.shockwave);
         this.fx.addPass(new BlackHolePass(this));
 
         this.menu = new FXMenu(this, this.fx);
+
+        this.input.on('pointerdown', (pointer: Phaser.Input.Pointer) => {
+            this.shockwave.trigger(pointer.x, pointer.y);
+        });
 
         this.input.keyboard?.on('keydown-F1', () => {
             this.menu.toggle();
