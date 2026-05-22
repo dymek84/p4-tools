@@ -77,3 +77,61 @@ Phaser 4 is powerful but minimal. It does not include:
 
 ## Project Structure
 
+p4-tools/
+│
+├── core/
+│   ├── pipelines/        # Custom Phaser 4 pipelines
+│   ├── passes/           # Post-processing passes
+│   ├── shaders/          # GLSL / WGSL shader modules
+│   └── utils/            # Shared helpers
+│
+├── integrations/
+│   ├── three/            # Three.js → Phaser 4 bridge
+│   ├── regl/             # regl → Phaser 4 bridge
+│   └── pixi/             # PixiJS filters → Phaser 4 bridge
+│
+├── examples/
+│   ├── shockwave/
+│   ├── distortion/
+│   ├── bloom/
+│   ├── lightning/
+│   └── particles/
+│
+└── README.md
+
+---
+
+## Examples
+
+Each example includes:
+
+- source code  
+- shader file  
+- integration layer  
+- Phaser 4 scene  
+
+Planned examples:
+
+- Shockwave FX  
+- Energy ring  
+- Lightning bolt  
+- Distortion field  
+- Heat haze  
+- Bloom + blur  
+- GPU particles  
+
+---
+
+## Goals
+
+- Provide modern FX capabilities for Phaser 4  
+- Offer clean, reusable shader utilities  
+- Avoid WebGL boilerplate  
+- Support WebGL2 and WebGPU  
+- Keep everything modular and optional  
+
+---
+
+## License
+
+MIT
