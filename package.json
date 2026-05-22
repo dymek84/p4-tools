@@ -1,0 +1,23 @@
+{
+    "name": "p4-tools-starter",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview"
+    },
+    "dependencies": {
+        "@pixi/filter-shockwave": "^5.1.1",
+        "phaser": "^4.1.0",
+        "pixi-filters": "^6.1.5",
+        "pixi.js": "^8.18.1",
+        "regl": "^2.1.1",
+        "three": "^0.184.0"
+    },
+    "devDependencies": {
+        "@types/node": "^24.0.10",
+        "typescript": "^5.8.3",
+        "vite": "^7.0.4"
+    }
+}

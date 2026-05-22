@@ -76,6 +76,8 @@ Phaser 4 is powerful but minimal. It does not include:
 ---
 
 ## Project Structure
+```bash
+
 
 p4-tools/
 │
@@ -98,7 +100,7 @@ p4-tools/
 │   └── particles/
 │
 └── README.md
-
+```
 ---
 
 ## Examples
